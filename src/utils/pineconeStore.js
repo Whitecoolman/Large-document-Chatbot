@@ -10,3 +10,11 @@ async function storeChunkInPinecone(chunks) {
   await index.upsert(vectors);
   console.log("Stored document chunks in Pinecone!");
 }
+
+async function retrieveRelevantChunks(quert,topK = 5) {
+  const queryEmbedding = await getEmbedding(query);
+  const queryResults = await index.query({ vector: queryEmbedding, topK, IncludeMetadata: true });
+  return queryResults.matches.map((match) => match.metadata.text)
+}
+
+module.exports = { storeChunkInPinecone, retrieveRelevantChunks };

@@ -20,5 +20,5 @@ async function runChatbot() {
 // Process PDF & Query Chatbot
 (async () => {
   await processAndStorePDF("resume.pdf");
-  await runChatbot();
+  // await runChatbot();
 })();

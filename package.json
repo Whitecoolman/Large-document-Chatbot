@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@pinecone-database/pinecone": "^4.1.0",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "openai": "^4.81.0",
